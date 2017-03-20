@@ -15,6 +15,17 @@ class QuestionStore {
     const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
     this.dataSource = ds.cloneWithRows(this.questions);
   }
+
+  add(doc){
+    this.questions.push(doc);
+    this.refresh();
+  }
+
+  //replace dataSource with new questions array
+  refresh(){
+    this.dataSource = this.dataSource.cloneWithRows(this.questions);
+  }
+
 }
 
 const questionStore = new QuestionStore();

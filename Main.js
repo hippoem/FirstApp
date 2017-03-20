@@ -14,7 +14,7 @@ class TabIcon extends Component {
     if(title ==  "Questions"){
       icon = "help-circle";
     }else if(title == "About"){
-      icon = "setting";
+      icon = "person";
     }
 
     return (
