@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Header, Left, Right, Button, Body, Title, Container, Content, Text, Icon} from 'native-base';
+import {Header, Left, Right, Button, Body, Title, Container, Content, Text, Icon, Card, CardItem, Thumbnail} from 'native-base';
 import {Actions} from 'react-native-router-flux';
 
 export default class QuestionDetail extends Component {
@@ -28,8 +28,31 @@ export default class QuestionDetail extends Component {
       <Container>
         {this.renderHeader()}
         <Content>
-          <Text>Title: {title}</Text>
-          <Text>Author: {author}</Text>
+          <Card>
+            <CardItem bordered>
+              <Left>
+                <Icon name="help-circle"/>
+                <Body>
+                  <Text>{title}</Text>
+                  <Text note>{author}, on April 15, 2016</Text>
+                </Body>
+              </Left>
+            </CardItem>
+            <CardItem>
+              <Body>
+                <Text> Lorem Ipsum dolor sit amet amet jabang baye </Text>
+              </Body>
+              <Right>
+                <Button transparent>
+                  <Icon active name="arrow-up"/>
+                </Button>
+                <Text>4</Text>
+                <Button transparent>
+                  <Icon active name="arrow-down"/>
+                </Button>
+              </Right>
+            </CardItem>
+          </Card>
         </Content>
       </Container>
     );
