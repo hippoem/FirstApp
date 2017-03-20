@@ -56,7 +56,8 @@ const styles = StyleSheet.create({
     justifyContent:'center',
     padding:20,
     marginBottom:10,
-    backgroundColor: '#FFF'
+    backgroundColor: '#FFF',
+    flexDirection: "row"
   },
   titleRow: {
     flex:4
