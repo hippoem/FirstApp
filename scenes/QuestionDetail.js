@@ -21,11 +21,15 @@ export default class QuestionDetail extends Component {
   }
 
   render(){
+    const {title, author} = this.props.question;
+    //const title = this.props.question.title;
+    //const author = this.props.question.author;
     return(
       <Container>
         {this.renderHeader()}
         <Content>
-          <Text>Question Detail Page</Text>
+          <Text>Title: {title}</Text>
+          <Text>Author: {author}</Text>
         </Content>
       </Container>
     );
