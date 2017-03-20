@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {Header, Title, Container, Content, Left, Body, Right, ListItem, Text, Icon } from 'native-base';
 import {ListView} from 'react-native';
+import {Actions} from 'react-native-router-flux';
 
 export default class Question extends Component {
 
@@ -34,7 +35,7 @@ export default class Question extends Component {
   renderRow(rowData){
 
     return(
-      <ListItem>
+      <ListItem onPress={()=> {Actions.QuestionDetail({question: rowData})}}>
         <Body>
           <Text>{rowData.author}</Text>
           <Text note>{rowData.title}</Text>
