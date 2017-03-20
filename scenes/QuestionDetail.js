@@ -21,7 +21,7 @@ export default class QuestionDetail extends Component {
   }
 
   render(){
-    const {title, author} = this.props.question;
+    const {title, author, vote, description, createdAt} = this.props.question;
     //const title = this.props.question.title;
     //const author = this.props.question.author;
     return(
@@ -34,19 +34,19 @@ export default class QuestionDetail extends Component {
                 <Icon name="help-circle"/>
                 <Body>
                   <Text>{title}</Text>
-                  <Text note>{author}, on April 15, 2016</Text>
+                  <Text note>{author}, {createdAt.toString()}</Text>
                 </Body>
               </Left>
             </CardItem>
             <CardItem>
               <Body>
-                <Text> Lorem Ipsum dolor sit amet amet jabang baye </Text>
+                <Text> {description} </Text>
               </Body>
               <Right>
                 <Button transparent>
                   <Icon active name="arrow-up"/>
                 </Button>
-                <Text>4</Text>
+                <Text>{vote}</Text>
                 <Button transparent>
                   <Icon active name="arrow-down"/>
                 </Button>
