@@ -22,7 +22,13 @@ export default class Question extends Component {
 
     return(
       <View style={styles.row}>
-        <Text>{rowData.title} - {rowData.author}</Text>
+        <View style={styles.titleRow}>
+          <Text>{rowData.title}</Text>
+        </View>
+
+        <View style={styles.authorRow}>
+          <Text>{rowData.author}</Text>
+        </View>
       </View>
     );
   }
@@ -51,5 +57,11 @@ const styles = StyleSheet.create({
     padding:20,
     marginBottom:10,
     backgroundColor: '#FFF'
+  },
+  titleRow: {
+    flex:4
+  },
+  authorRow: {
+    flex:1
   }
 });
