@@ -3,7 +3,7 @@ import {StyleSheet, Text, View, ListView} from 'react-native';
 
 export default class Question extends Component {
 
-  contructor(){
+  constructor(){
     super();
     const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
     this.questions= [
