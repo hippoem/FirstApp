@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
-import {StyleSheet, Text, View, ListView} from 'react-native';
+import {Header, Title, Container, Content, Left, Body, Right, ListItem, Text, Icon } from 'native-base';
+import {ListView} from 'react-native';
 
 export default class Question extends Component {
 
@@ -9,7 +10,7 @@ export default class Question extends Component {
     this.questions= [
       {title: "First Quesion", author: "Feri"},
       {title: "Second Quesion", author: "Donald"},
-      {title: "Third Quesion", author: "Adthasit"}
+      {title: "Third Quesion", author: "Adthasit"},
     ];
 
     this.state = {
@@ -18,51 +19,45 @@ export default class Question extends Component {
 
   }
 
+  renderHeader(){
+    const {title} = this.props;
+
+    return(
+      <Header>
+        <Body>
+          <Title>{title}</Title>
+        </Body>
+      </Header>
+    )
+  }
+
   renderRow(rowData){
 
     return(
-      <View style={styles.row}>
-        <View style={styles.titleRow}>
-          <Text>{rowData.title}</Text>
-        </View>
-
-        <View style={styles.authorRow}>
+      <ListItem>
+        <Body>
           <Text>{rowData.author}</Text>
-        </View>
-      </View>
+          <Text note>{rowData.title}</Text>
+        </Body>
+        <Right>
+          <Icon name="arrow-forward" style={{color: "#0098ff"}}/>
+        </Right>
+      </ListItem>
     );
   }
 
   render() {
-    return (
-      <View style={styles.container}>
-        <ListView
-          dataSource={this.state.dataSource}
-          renderRow={this.renderRow.bind(this)}
-        />
-      </View>
+    return(
+      <Container>
+        {this.renderHeader()}
+        <Content>
+          <ListView
+            dataSource={this.state.dataSource}
+            renderRow={this.renderRow.bind(this)}
+          />
+        </Content>
+      </Container>
     );
+
   }
 }
-
-const styles = StyleSheet.create({
-  container:{
-    flex:1,
-    justifyContent:'center',
-    backgroundColor: '#F5FCFF'
-  },
-  row:{
-    flex:1,
-    justifyContent:'center',
-    padding:20,
-    marginBottom:10,
-    backgroundColor: '#FFF',
-    flexDirection: "row"
-  },
-  titleRow: {
-    flex:4
-  },
-  authorRow: {
-    flex:1
-  }
-});
