@@ -21,7 +21,9 @@ export default class Question extends Component {
   renderRow(rowData){
 
     return(
-      <Text>{rowData.title} - {rowData.author}</Text>
+      <View style={styles.row}>
+        <Text>{rowData.title} - {rowData.author}</Text>
+      </View>
     );
   }
 
@@ -43,5 +45,12 @@ const styles = StyleSheet.create({
     justifyContent:'center',
     alignItems: 'center',
     backgroundColor: '#F5FCFF'
+  },
+  row:{
+    flex:1,
+    justifyContent:'center',
+    padding:20,
+    marginBottom:10,
+    backgroundColor: '#FFF'
   }
 });
