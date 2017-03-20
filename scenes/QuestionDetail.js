@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {Header, Left, Right, Button, Body, Title, Container, Content, Text, Icon, Card, CardItem, Thumbnail} from 'native-base';
 import {Actions} from 'react-native-router-flux';
+import moment from 'moment';
 
 export default class QuestionDetail extends Component {
   renderHeader() {
@@ -34,7 +35,7 @@ export default class QuestionDetail extends Component {
                 <Icon name="help-circle"/>
                 <Body>
                   <Text>{title}</Text>
-                  <Text note>{author}, {createdAt.toString()}</Text>
+                  <Text note>{author}, on {moment(createdAt).format("DD/MM/YYYY")}</Text>
                 </Body>
               </Left>
             </CardItem>
